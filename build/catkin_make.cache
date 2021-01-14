@@ -1,0 +1,2 @@
+my_simulation
+-DCATKIN_DEVEL_PREFIX=/home/meenakshi/project2_ws/devel -DCMAKE_INSTALL_PREFIX=/home/meenakshi/project2_ws/install -G Unix Makefiles
