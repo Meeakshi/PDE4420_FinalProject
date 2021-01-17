@@ -19,8 +19,8 @@
 
     <!-- maze -->
     <include>
-      <uri>model://cafe</uri>
-	<pose>1.75 4.0.0.0.0.0</pose>
+      <uri>//home//meenakshi//project2_ws//src//my_simulation//myspace//cafe</uri>
+	<pose>1.0.0.0.0.0.0</pose>
     </include>
 
     <physics type="ode">

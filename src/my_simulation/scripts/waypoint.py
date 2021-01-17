@@ -9,7 +9,9 @@ from nav_msgs.msg import Odometry
 from math import pi, sqrt, atan2
 
 #WAYPOINTS = [[0.5,0],[1,0],[1,0],[1,0.5],[1,1],[1,1],[0.5,1],[0,1],[0,1],[0,0.5],[0,0]]
-WAYPOINTS = [[0.5,0],[1,0],[1,0],[1,0.5],[0,0],[1.5,0],[1,0],[1,0],[0,0.5]]
+#WAYPOINTS = [[0.5,0],[1,0],[1,0],[0.5,0]]
+#WAYPOINTS = [[0,0],[0.2,0],[0.3,0],[0.3,0.2],[0.3,0.3],[0.2,0.3],[0.2,0.3],[0,0.2],[0,0]]
+WAYPOINTS = [[0.1,0],[1,0],[1,0],[1,1],[1,1],[0,1],[0,1],[0.1,0]]
 
 class PID:
     """
@@ -73,9 +75,11 @@ class turtlebot_move():
         self.trajectory = list()
 
         # track a sequence of waypoints
-        for point in WAYPOINTS:
-            self.move_to_point(point[0], point[1])
-            rospy.sleep(1)
+	for i in (0,1,2,3,4,5,6,7,8,9):
+		for point in WAYPOINTS:
+		    self.move_to_point(point[0], point[1])
+		    #rospy.sleep(1)
+		rospy.logwarn(i)
         self.stop()
         rospy.logwarn("Action done.")
 
@@ -124,7 +128,7 @@ class turtlebot_move():
             vector = np.array([diff_x, diff_y])
             linear = np.dot(vector, direction_vector) # projection
             if abs(linear) > 0.2:
-                linear = linear/abs(linear)*0.2
+                linear = linear/abs(linear)*0.3
 
             angular = self.pid_theta.update(self.theta)
             if abs(angular) > 0.2:
