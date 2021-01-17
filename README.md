@@ -1,4 +1,4 @@
-Project Setup Instructions:
+Instructions to Setup and Run my_simulation:
 TO CREATE A CATKIN WORKSPACE:
 1. Open terminal and enter below commands
     mkdir -p ~/project2_ws/src
